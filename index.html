@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Akshita Anand – ML & Product Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EDF1F7; --surface:#FFFFFF; --ink:#18212F; --muted:#556073; --line:#CFD7E3;
+  --accent:#2F4BFF; --accent2:#12A982; --accent-ink:#FFFFFF;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#10151F;--surface:#171E2B;--ink:#E8EDF6;--muted:#9AA6BA;--line:#2A3446;--accent:#7C8CFF;--accent2:#3DD6A8;--accent-ink:#10151F}
+}
+:root[data-theme="dark"]{--bg:#10151F;--surface:#171E2B;--ink:#E8EDF6;--muted:#9AA6BA;--line:#2A3446;--accent:#7C8CFF;--accent2:#3DD6A8;--accent-ink:#10151F}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "IBM Plex Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque","IBM Plex Sans",system-ui,sans-serif;line-height:1.1;margin:0}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;gap:16px;flex-wrap:wrap}
+nav .logo{font:800 20px "Bricolage Grotesque",sans-serif;color:var(--ink);text-decoration:none}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav ul a{color:var(--muted);text-decoration:none;font-weight:500;font-size:15px}
+nav ul a:hover{color:var(--ink)}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center;padding:40px 0 72px}
+.hero h1{font-size:clamp(46px,8vw,92px);font-weight:800;letter-spacing:-.03em}
+.hero .role{font:500 clamp(19px,2.4vw,24px)/1.35 "Bricolage Grotesque",sans-serif;margin:18px 0 12px}
+.hero p{color:var(--muted);max-width:52ch;margin:0 0 26px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 22px;border-radius:999px;font-weight:500;text-decoration:none;border:2px solid var(--accent)}
+.btn.primary{background:var(--accent);color:var(--accent-ink)}
+.btn.ghost{color:var(--accent)}
+.btn:hover{transform:translateY(-2px)}
+.hand{background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:12px;margin:0}
+.hand svg{width:100%;height:auto;display:block;touch-action:none}
+.hand figcaption{font-size:14px;color:var(--muted);padding:4px 12px 8px}
+.bone{stroke:var(--accent);stroke-width:3;stroke-linecap:round}
+.joint{fill:var(--accent2);stroke:var(--surface);stroke-width:2}
+section{padding:56px 0;border-top:1px solid var(--line)}
+section h2{font-size:clamp(30px,4.5vw,44px);font-weight:700;letter-spacing:-.02em;margin-bottom:28px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px}
+.card.feature{grid-column:1/-1;border-color:var(--accent);border-width:2px;display:grid;grid-template-columns:1fr 1fr;gap:8px 32px}
+.card.feature>h3,.card.feature>.tags{grid-column:1}
+.card h3{font-size:24px;font-weight:700;margin-bottom:10px}
+.card p{margin:0 0 12px;color:var(--muted)}
+.card ul{margin:0;padding-left:20px;color:var(--muted)}
+.card li{margin-bottom:6px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px;padding:0;list-style:none}
+.tags li{font-size:13px;margin:0;padding:3px 10px;border-radius:999px;background:var(--bg);color:var(--ink);border:1px solid var(--line)}
+.result{display:inline-block;font:700 15px "Bricolage Grotesque",sans-serif;color:var(--accent2);margin-bottom:10px}
+.job{display:grid;grid-template-columns:200px 1fr;gap:12px 32px}
+.job .when{color:var(--muted);font-size:15px}
+.job h3{font-size:26px;margin-bottom:2px}
+.job .org{font-weight:500;margin-bottom:12px}
+.job ul{padding-left:20px;margin:0}
+.job li{margin-bottom:8px}
+table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.scroll{overflow-x:auto}
+th,td{text-align:left;padding:14px 18px;border-bottom:1px solid var(--line);font-size:16px}
+tr:last-child td{border-bottom:0}
+th{font:700 15px "Bricolage Grotesque",sans-serif;color:var(--muted)}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+.skills h3{font-size:19px;margin-bottom:12px}
+.skills .tags{margin:0}
+.certs{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.certs li{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 20px}
+.certs b{display:block}
+.certs span{color:var(--muted);font-size:15px}
+.contact{text-align:left}
+.contact p{max-width:50ch;color:var(--muted);margin:0 0 22px}
+footer{padding:32px 0 48px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr;padding-bottom:48px}
+  .grid,.certs,.card.feature{grid-template-columns:1fr}
+  .job{grid-template-columns:1fr}
+  .wrap{padding:0 18px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn:hover{transform:none}}
+.bg{position:fixed;inset:0;z-index:-1;pointer-events:none;background-color:var(--bg);background-image:radial-gradient(640px 420px at 88% 6%,color-mix(in srgb,var(--accent) 24%,transparent),transparent 70%),radial-gradient(520px 400px at 4% 38%,color-mix(in srgb,var(--accent2) 20%,transparent),transparent 70%),radial-gradient(color-mix(in srgb,var(--ink) 13%,transparent) 1px,transparent 1px);background-size:auto,auto,24px 24px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;margin-top:14px;padding:12px 22px;border-radius:999px;background:color-mix(in srgb,var(--surface) 78%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line)}
+nav ul a{padding:4px 2px;border-bottom:2px solid transparent}
+nav ul a:hover{border-color:var(--accent2)}
+.hero{padding:56px 0 48px}
+.hero h1{font-size:clamp(52px,9vw,104px);letter-spacing:-.04em;background:linear-gradient(100deg,var(--ink) 35%,var(--accent) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.08em}
+.hero .role{color:var(--ink)}
+.hero>div{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.btn{transition:transform .2s,box-shadow .2s}
+.btn.primary{box-shadow:0 10px 24px -10px var(--accent)}
+.hand{border-radius:36px;padding:16px;background:radial-gradient(circle at 50% 35%,color-mix(in srgb,var(--accent) 14%,var(--surface)),var(--surface) 70%);box-shadow:0 40px 70px -35px color-mix(in srgb,var(--accent) 55%,transparent)}
+.bone{stroke-width:4;filter:drop-shadow(0 0 5px color-mix(in srgb,var(--accent) 55%,transparent))}
+.joint{r:7;filter:drop-shadow(0 0 6px var(--accent2))}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:8px 0 24px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:22px 24px;box-shadow:0 14px 30px -22px color-mix(in srgb,var(--ink) 50%,transparent)}
+.stat b{display:block;font:800 clamp(34px,4.5vw,48px)/1 "Bricolage Grotesque",sans-serif;letter-spacing:-.03em;color:var(--accent)}
+.stat:nth-child(even) b{color:var(--accent2)}
+.stat span{display:block;margin-top:8px;font-size:15px;color:var(--muted)}
+section{border-top:0;padding:48px 0}
+section h2::after{content:"";display:block;width:60px;height:5px;border-radius:4px;margin-top:14px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+.card{border-radius:24px;box-shadow:0 18px 36px -26px color-mix(in srgb,var(--ink) 55%,transparent);transition:transform .25s,box-shadow .25s}
+.grid .card{border-top:5px solid var(--c,var(--accent))}
+.grid .card:nth-child(2){--c:var(--accent2)}
+.grid .card:nth-child(3){--c:#F2A93B}
+.grid .card:nth-child(4){--c:#E8618C}
+.card.feature{border-width:1px;border-top-width:5px;background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 9%,var(--surface)),var(--surface) 60%)}
+.grid .card:hover,.certs li:hover{transform:translateY(-5px);box-shadow:0 26px 44px -24px color-mix(in srgb,var(--c,var(--accent)) 60%,transparent)}
+.tags li{background:color-mix(in srgb,var(--accent) 11%,transparent);border-color:transparent;font-weight:500}
+.result{background:color-mix(in srgb,var(--accent2) 15%,transparent);padding:5px 14px;border-radius:999px}
+.job.card{border-top:0;border-left:6px solid var(--accent2);padding:30px 32px}
+.job .when{align-self:start;justify-self:start;padding:5px 14px;border-radius:999px;background:color-mix(in srgb,var(--accent2) 16%,transparent);color:var(--ink);font-weight:500}
+table{border-radius:22px;box-shadow:0 18px 36px -28px color-mix(in srgb,var(--ink) 55%,transparent)}
+thead{background:color-mix(in srgb,var(--accent) 9%,var(--surface))}
+tbody tr:hover{background:color-mix(in srgb,var(--accent) 5%,transparent)}
+.certs li{border-radius:18px;border-left:5px solid var(--accent);transition:transform .25s,box-shadow .25s}
+.certs li:nth-child(even){border-left-color:var(--accent2)}
+section.contact{margin-top:40px;padding:56px 48px;border-radius:36px;color:var(--accent-ink);background:linear-gradient(135deg,var(--accent),color-mix(in srgb,var(--accent) 50%,var(--accent2)))}
+section.contact h2::after{background:var(--accent-ink);opacity:.7}
+section.contact p{color:inherit;opacity:.92}
+.contact .btn.primary{background:var(--accent-ink);color:var(--accent);border-color:var(--accent-ink);box-shadow:none}
+.contact .btn.ghost{color:var(--accent-ink);border-color:var(--accent-ink)}
+.card.feature>h3,.card.feature>.tags{grid-column:1/-1}
+.tags{align-items:flex-start;align-content:flex-start}
+.tags li{line-height:1.4;padding:4px 12px;white-space:nowrap}
+footer{border-top:0;text-align:center}
+@media (max-width:480px){.stats{grid-template-columns:1fr}}
+@media (max-width:760px){.stats{grid-template-columns:repeat(3,1fr)}nav{border-radius:24px}section.contact{padding:36px 24px;border-radius:28px}.job.card{padding:24px}}
+@media (prefers-reduced-motion:reduce){.hero>div{animation:none}.grid .card:hover,.certs li:hover{transform:none}}
+</style>
+</head>
+<body>
+<div class="bg" aria-hidden="true"></div>
+<div class="wrap">
+  <nav aria-label="Main">
+    <a class="logo" href="#top">Akshita Anand</a>
+    <ul>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero" id="top">
+    <div>
+      <h1>Akshita Anand</h1>
+      <p class="role">Computer science student building machine learning and computer vision projects, with an eye for how people use products.</p>
+      <p>I’m in my final year of B.Tech at Delhi Technological University. I enjoy building practical software, from machine learning models to web apps, and improving it by learning from how people use it.</p>
+      <div class="btns">
+        <a class="btn primary" href="#projects">See my projects</a>
+        <a class="btn ghost" href="mailto:akshita_23cs483@dtu.ac.in">Email me</a>
+      </div>
+    </div>
+    <figure class="hand">
+      <svg id="hand" viewBox="0 0 400 440" role="img" aria-label="Animated hand skeleton made of 21 landmark points that follows your pointer"></svg>
+      <figcaption>The 21 landmarks my gesture model reads from a webcam. Move your pointer over the hand.</figcaption>
+    </figure>
+  </header>
+
+  <div class="stats">
+    <div class="stat"><b>400+</b><span>DSA problems solved on LeetCode</span></div>
+    <div class="stat"><b>7.7</b><span>CGPA at Delhi Technological University</span></div>
+    <div class="stat"><b>4</b><span>Projects across ML, web and games</span></div>
+  </div>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="card job">
+      <div class="when">April 2026 – June 2026</div>
+      <div>
+        <h3>Product Strategy and UX intern</h3>
+        <div class="org">Vauxen</div>
+        <ul>
+          <li>Mapped user journeys and ran heuristic evaluations across core modules, finding where users drop off during onboarding.</li>
+          <li>Documented application edge cases and technical debt to help product and engineering teams prioritise fixes.</li>
+          <li>Analysed user feedback and workflows to turn findings into concrete product improvements.</li>
+          <li>Studied workflow bottlenecks and proposed data-backed changes that simplify navigation and shorten task completion time.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="grid">
+      <article class="card feature">
+        <h3>Gesture Recognition Model</h3>
+        <ul class="tags"><li>Python</li><li>OpenCV</li><li>MediaPipe</li><li>Scikit-learn</li></ul>
+        <div>
+          <p>A real-time hand gesture recognition system that works from webcam input.</p>
+          <a href="https://github.com/aakshita09">View on GitHub</a>
+        </div>
+        <ul>
+          <li>Extracts hand landmarks with MediaPipe Hands and turns them into classification features.</li>
+          <li>Uses image preprocessing and feature normalisation so results hold across different hand positions and sizes.</li>
+          <li>Runs a live prediction pipeline that recognises several predefined gestures.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>Credit Card Fraud Detection</h3>
+        <ul class="tags"><li>Python</li><li>Scikit-learn</li><li>Pandas</li><li>NumPy</li><li>Matplotlib</li><li>Seaborn</li></ul>
+        <span class="result">Random Forest: about 0.88 fraud precision</span>
+        <ul>
+          <li>Explored and preprocessed highly imbalanced transaction data.</li>
+          <li>Applied SMOTE to improve detection of fraudulent transactions.</li>
+          <li>Compared several classifiers and picked Random Forest as the best performer.</li>
+        </ul>
+        <p style="margin-top:12px"><a href="https://github.com/aakshita09">View on GitHub</a></p>
+      </article>
+
+      <article class="card">
+        <h3>Cognitive Health Support System</h3>
+        <ul class="tags"><li>Python</li><li>MySQL</li><li>HTML</li><li>CSS</li></ul>
+        <ul>
+          <li>Web platform that brings mood tracking, self-assessment quizzes and counsellor booking into one app.</li>
+          <li>Includes user authentication and admin views for different workflows.</li>
+          <li>Built the MySQL database and SQL reporting that organise and retrieve application data.</li>
+        </ul>
+        <p style="margin-top:12px"><a href="https://github.com/aakshita09">View on GitHub</a></p>
+      </article>
+
+      <article class="card">
+        <h3>Two Player Snake Game</h3>
+        <ul class="tags"><li>C++</li><li>SDL</li></ul>
+        <ul>
+          <li>Wrote the game logic for movement, scoring and collisions.</li>
+          <li>Built the rendering and gameplay loop in SDL with a modular code structure.</li>
+          <li>Supports two players at once with score-based play.</li>
+        </ul>
+        <p style="margin-top:12px"><a href="https://github.com/aakshita09">View on GitHub</a></p>
+      </article>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="card"><h3>Languages</h3><ul class="tags"><li>Python</li><li>C++</li><li>C</li><li>Java</li><li>SQL</li></ul></div>
+      <div class="card"><h3>Machine learning</h3><ul class="tags"><li>Pandas</li><li>NumPy</li><li>Matplotlib</li><li>Scikit-learn</li><li>OpenCV</li><li>MediaPipe</li></ul></div>
+      <div class="card"><h3>Web development</h3><ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul></div>
+      <div class="card"><h3>Core CS</h3><ul class="tags"><li>Data structures &amp; algorithms</li><li>OOP</li><li>DBMS</li><li>Operating systems</li><li>Machine learning</li><li>Artificial intelligence</li></ul></div>
+      <div class="card"><h3>Tools</h3><ul class="tags"><li>MySQL</li><li>VS Code</li><li>GitHub</li></ul></div>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Programme</th><th>Years</th><th>School</th><th>Score</th></tr></thead>
+        <tbody>
+          <tr><td>B.Tech, Computer Science</td><td>2023–2027</td><td>Delhi Technological University, Delhi</td><td>7.7 CGPA</td></tr>
+          <tr><td>CBSE, Class XII</td><td>2023</td><td>Abu Dhabi Indian School, Abu Dhabi</td><td>94.4%</td></tr>
+          <tr><td>CBSE, Class X</td><td>2021</td><td>Abu Dhabi Indian School, Abu Dhabi</td><td>95%</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="achievements">
+    <h2>Certificates and activities</h2>
+    <ul class="certs">
+      <li><b>400+ DSA problems solved</b><span>LeetCode</span></li>
+      <li><b>The Joy of Computing using Python</b><span>Elite certification, NPTEL</span></li>
+      <li><b>Human Computer Interaction</b><span>Elite certification, NPTEL</span></li>
+      <li><b>Generative AI Literacy</b><span>SkillQuest, Simplilearn</span></li>
+      <li><b>Skillop Society, Web Development</b><span>Member, October 2024 – March 2025</span></li>
+    </ul>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Get in touch</h2>
+    <p>I’m open to internships and projects in machine learning, computer vision and product work. Email is the quickest way to reach me.</p>
+    <div class="btns">
+      <a class="btn primary" href="mailto:akshita_23cs483@dtu.ac.in">akshita_23cs483@dtu.ac.in</a>
+      <a class="btn ghost" href="https://github.com/aakshita09">github.com/aakshita09</a>
+    </div>
+  </section>
+
+  <footer>© 2026 Akshita Anand</footer>
+</div>
+
+<script>
+(function(){
+  var svg=document.getElementById('hand'),NS='http://www.w3.org/2000/svg';
+  var P=[[200,400],[150,360],[112,320],[88,278],[70,240],[160,270],[150,200],[145,150],[142,105],[200,255],[200,175],[200,120],[200,70],[240,265],[250,195],[255,148],[258,108],[275,290],[295,235],[308,200],[318,168]];
+  var E=[[0,1],[1,2],[2,3],[3,4],[0,5],[5,6],[6,7],[7,8],[5,9],[9,10],[10,11],[11,12],[9,13],[13,14],[14,15],[15,16],[13,17],[17,18],[18,19],[19,20],[0,17]];
+  var bones=E.map(function(){var l=document.createElementNS(NS,'line');l.setAttribute('class','bone');svg.appendChild(l);return l});
+  var joints=P.map(function(){var c=document.createElementNS(NS,'circle');c.setAttribute('r',6);c.setAttribute('class','joint');svg.appendChild(c);return c});
+  var depth=P.map(function(p,i){return i===0?0:((i-1)%4+1)/4});
+  var tx=0,ty=0,cx=0,cy=0;
+  var still=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function draw(t){
+    cx+=(tx-cx)*.08;cy+=(ty-cy)*.08;
+    var pts=P.map(function(p,i){
+      var d=depth[i],idle=still?0:Math.sin(t/700+i*.6)*3*d;
+      return [p[0]+cx*34*d+idle,p[1]+cy*26*d+idle*.6];
+    });
+    E.forEach(function(e,k){var a=pts[e[0]],b=pts[e[1]];bones[k].setAttribute('x1',a[0]);bones[k].setAttribute('y1',a[1]);bones[k].setAttribute('x2',b[0]);bones[k].setAttribute('y2',b[1])});
+    pts.forEach(function(p,i){joints[i].setAttribute('cx',p[0]);joints[i].setAttribute('cy',p[1])});
+    requestAnimationFrame(draw);
+  }
+  function move(e){var r=svg.getBoundingClientRect();tx=((e.clientX-r.left)/r.width-.5)*2;ty=((e.clientY-r.top)/r.height-.5)*2}
+  svg.addEventListener('pointermove',move);
+  svg.addEventListener('pointerleave',function(){tx=0;ty=0});
+  requestAnimationFrame(draw);
+})();
+</script>
+</body>
+</html>
